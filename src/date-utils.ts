@@ -1,19 +1,20 @@
-import dayjs from 'dayjs';
-import { logger } from './logger';
+import dayjs from "dayjs";
+import { logger } from "./logger";
+import { DateMC } from "./utils";
 
-export const DATE_FORMAT = 'YYYY MMM DD';
+export const DATE_FORMAT = "YYYY MMM DD";
 
 export function toDayJs(date: DateMC) {
-  if (date instanceof Date || typeof date === 'string') return dayjs(date);
-  if (typeof date === 'number') return dayjs.unix(date);
+  if (date instanceof Date || typeof date === "string") return dayjs(date);
+  if (typeof date === "number") return dayjs.unix(date);
   if ((date as any).toDate) return dayjs((date as any).toDate());
 
-  logger.error('invalid date: ', date);
+  logger.error("invalid date: ", date);
 
   return dayjs();
 }
 
-export function formatDate(date?: DateMC | null, empty = '--') {
+export function formatDate(date?: DateMC | null, empty = "--") {
   if (!date) return empty;
 
   return toDayJs(date).format(DATE_FORMAT);
