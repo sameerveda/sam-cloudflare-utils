@@ -1,0 +1,16 @@
+{
+  "name": "sam-cloudflare-utils",
+  "version": "0.0.1",
+  "description": "shared utils by cloudflare opennext projects ",
+  "main": "src/index.ts",
+  "repository": "https://github.com/sameerveda/sam-cloudflare-utils",
+  "author": "Sameer Veda <sameerveda@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash-es": "^4.17.23",
+    "nanoid": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12"
+  }
+}
